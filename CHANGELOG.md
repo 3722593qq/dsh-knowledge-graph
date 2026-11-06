@@ -2,6 +2,13 @@
 
 All notable changes to `dsh-knowledge-graph` are recorded here. The format follows Keep a Changelog and the project uses semantic versioning.
 
+## [0.1.3] - 2026-11-06
+
+### Fixed
+
+- Restored UTF-8 Chinese text in `README.md` and `docs/acceptance.json` after the 0.1.2 documentation upload.
+- Rebuilt the release tarball so its README renders Chinese correctly.
+
 ## [0.1.2] - 2026-11-06
 
 ### Changed
