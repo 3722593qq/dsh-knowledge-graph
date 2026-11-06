@@ -1,0 +1,116 @@
+{
+  "plugin": "dsh-knowledge-graph",
+  "version": "0.1.2",
+  "host": "DeepSeek Harness 0.2.0-rc.2 (Electron desktop runtime)",
+  "verifiedAt": "2026-11-06",
+  "model": "deepseek-account/deepseek-flash",
+  "install": {
+    "dsh": "0.2.0-rc.2",
+    "profile": "desktop",
+    "dependency": "dsh-knowledge-graph",
+    "activation": "registered in dsh.profile.bundles; the live Desktop host exposes the four knowledge tools and the global rule section",
+    "desktopLivePanel": "docs/desktop-panel.png"
+  },
+  "save": {
+    "noteA": {
+      "http": 200,
+      "wikiPath": "wiki/浜嬬墿/DeepSeek Harness",
+      "responseMs": 23,
+      "wikiFilePresentAtResponse": true,
+      "totalToOrganizerIdleMs": 2108,
+      "modelPages": 1
+    },
+    "noteB": {
+      "http": 200,
+      "wikiPath": "wiki/浜嬬墿/鐭ヨ瘑鍥捐氨",
+      "responseMs": 12,
+      "wikiFilePresentAtResponse": true,
+      "totalToOrganizerIdleMs": 3128,
+      "modelPages": 2
+    },
+    "limitMs": 25000,
+    "pass": true
+  },
+  "bidirectionalLinks": {
+    "pages": ["wiki/浜嬬墿/DeepSeek Harness", "wiki/浜嬬墿/鐭ヨ瘑鍥捐氨"],
+    "relationsSeenInBothFiles": true,
+    "graphEdges": 1,
+    "edgeWeight": 2,
+    "pass": true
+  },
+  "graphLayout": {
+    "nodes": 304,
+    "edges": 601,
+    "nodeRadiusRangePx": [4.8, 20.8],
+    "unselectedEdgeAlpha": 0.3,
+    "selectedBrightness": { "neighbor": 0.8, "secondLayer": 0.35, "farther": 0.12, "unrelatedEdge": 0.06 },
+    "levelCounts": { "0": 1, "1": 4, "2": 8, "3": 12, "unrelated": 279 },
+    "hubPosition": { "x": -2.33, "y": -12.09 },
+    "hubIsCentered": true,
+    "pass": true
+  },
+  "drag": {
+    "dragging": true,
+    "alphaDuringDrag": 0.563,
+    "runningDuringDrag": true,
+    "neighborMovedPx": 79.81,
+    "alphaAfterRelease": 0.009955,
+    "runningAfterRelease": false,
+    "pass": true
+  },
+  "dataUpdate": {
+    "sameTransform": true,
+    "sameExistingNodePositions": true,
+    "alphaBefore": 0.009955,
+    "alphaAfter": 0.85,
+    "viewReset": false,
+    "pass": true
+  },
+  "localGraph": {
+    "depth1Nodes": 5,
+    "depth2Nodes": 13,
+    "depth5Nodes": 53,
+    "totalNodes": 304,
+    "defaultDepth": 2,
+    "pass": true
+  },
+  "delete": {
+    "confirmation": "鍒犻櫎銆屽垹闄ゆ紨绀恒€嶏紵鍙垹闄?wiki 椤甸潰锛岃祫鏂欏師鏂囦繚鐣欍€?,
+    "pageFileRemoved": true,
+    "reciprocalLinkRemoved": true,
+    "indexPagesAfterDelete": 1,
+    "graphNodesAfterDelete": 1,
+    "logAppended": true,
+    "rawNotesPreserved": true,
+    "screenshots": ["docs/delete-confirm.png", "docs/delete-after.png"],
+    "pass": true
+  },
+  "performance": {
+    "nodes": 304,
+    "edges": 601,
+    "frames": 120,
+    "averageFrameMs": 16.436,
+    "p95FrameMs": 16.8,
+    "maxFrameMs": 16.8,
+    "framesOver34Ms": 0,
+    "pass": true
+  },
+  "queue": {
+    "maxConcurrentModelCalls": 1,
+    "results": [
+      { "title": "B", "status": "done" },
+      { "title": "FAIL", "status": "failed", "error": "synthetic failure" },
+      { "title": "A", "status": "done" }
+    ],
+    "failedJobDidNotBlockLaterJobs": true,
+    "pass": true
+  },
+  "tools": {
+    "names": ["knowledge_index", "knowledge_read", "knowledge_search", "knowledge_graph"],
+    "writeTools": [],
+    "globalRuleContainsIndexFirst": true,
+    "globalRuleContainsSourceSuffix": true,
+    "pass": true
+  }
+}
+

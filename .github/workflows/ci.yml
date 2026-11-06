@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['22', '24']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Syntax check
+        run: |
+          node --check lib/index.js
+          node --check lib/client.js
+          node --check lib/store.js
+          node --check lib/organizer.js
+          node --check lib/util.js
+      - name: Tests
+        run: npm test
+      - name: Package dry run
+        run: npm pack --dry-run

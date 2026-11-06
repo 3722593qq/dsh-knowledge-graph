@@ -1,0 +1,76 @@
+{
+  "name": "dsh-knowledge-graph",
+  "version": "0.1.2",
+  "description": "Obsidian-style knowledge graph for DeepSeek Harness: save selections in one click, organize them with the current model, and explore the wiki as a force graph.",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "dsh-knowledge-graph contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3722593qq/dsh-knowledge-graph.git"
+  },
+  "homepage": "https://github.com/3722593qq/dsh-knowledge-graph#readme",
+  "bugs": {
+    "url": "https://github.com/3722593qq/dsh-knowledge-graph/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "obsidian",
+    "wiki",
+    "knowledge-graph",
+    "force-graph"
+  ],
+  "scripts": {
+    "test": "node test/store-test.mjs && node test/queue-test.mjs && node test/tools-test.mjs && node test/delete-test.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/*.js",
+    "docs/*.png",
+    "docs/*.json",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-chat",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.0-rc.2+": "compatible"
+      }
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.4"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  }
+}
